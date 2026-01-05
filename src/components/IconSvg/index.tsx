@@ -1,30 +1,28 @@
 import React from 'react';
-// import SvgIcon from 'react-native-svg-icon';
-import svgs from './svgs';
-
-// const IconSvg = (props: unknown) => <SvgIcon {...props} svgs={svgs} />;
-
-// export default IconSvg;
-
-// import React from 'react';
 import {SvgProps} from 'react-native-svg';
-// import svgs from './svgs';
+import svgs from './svgs';
 
 type IconName = keyof typeof svgs;
 
 type IconSvgProps = SvgProps & {
   name: IconName;
   className?: string;
+  color?: string;
+  fill?: string;
 };
 
-const IconSvg: React.FC<IconSvgProps> = ({name, ...rest}) => {
-  const iconElement = svgs[name];
+const IconSvg: React.FC<IconSvgProps> = ({name, color, fill, ...rest}) => {
+  const IconComponent = svgs[name];
 
-  if (!iconElement) {
+  if (!IconComponent) {
     return null;
   }
 
-  return React.cloneElement(iconElement, {...rest});
+  // Normalize ColorValue to string for our SVG components
+  const resolvedColor = typeof color === 'string' ? color : undefined;
+  const resolvedFill = typeof fill === 'string' ? fill : undefined;
+
+  return <IconComponent color={resolvedColor} fill={resolvedFill} {...rest} />;
 };
 
 export default IconSvg;

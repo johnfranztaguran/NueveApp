@@ -1,76 +1,20 @@
 import {
   Image,
   ScrollView,
-  StatusBar,
   Text,
   TextInput,
   TouchableOpacity,
   View,
-  useColorScheme,
 } from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import useSampleStore from '../../store/useSampleStore';
+// import {useBottomTabBarHeight} from '@react-navigation/bottom-tabs';
+import { quickActions, categories, featured } from '../../contants/mocks';
 
-const quickActions = [
-  {label: 'Favorites', emoji: '❤️'},
-  {label: 'History', emoji: '🕘'},
-  {label: 'Following', emoji: '👥'},
-  {label: 'Collections', emoji: '🗂️'},
-];
-
-const categories = [
-  {
-    label: "Coffe's",
-    image:
-      'https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=200&q=80',
-  },
-  {
-    label: 'Tours',
-    image:
-      'https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=200&q=80',
-  },
-  {
-    label: 'Rentals',
-    image:
-      'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=200&q=80',
-  },
-  {
-    label: 'Title',
-    image:
-      'https://images.unsplash.com/photo-1464979672361-746a04b4bca6?auto=format&fit=crop&w=200&q=80',
-  },
-];
-
-const featured = [
-  {
-    title: 'Product name',
-    price: '$10.99',
-    brand: 'Brand',
-    image:
-      'https://images.unsplash.com/photo-1528825871115-3581a5387919?auto=format&fit=crop&w=400&q=80',
-  },
-  {
-    title: 'Product name',
-    price: '$10.99',
-    brand: 'Brand',
-    image:
-      'https://images.unsplash.com/photo-1506806732259-39c2d0268443?auto=format&fit=crop&w=400&q=80',
-  },
-  {
-    title: 'Product name',
-    price: '$10.99',
-    brand: 'Brand',
-    image:
-      'https://images.unsplash.com/photo-1511684681081-05dfe1ae2f17?auto=format&fit=crop&w=400&q=80',
-  },
-];
-
-function Landing() {
-  const isDarkMode = useColorScheme() === 'dark';
+function DashBoard() {
 
   return (
     <SafeAreaView className="flex-1 bg-gray-100">
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
       <AppContent />
     </SafeAreaView>
   );
@@ -78,9 +22,13 @@ function Landing() {
 
 function AppContent() {
   const {count, increment, decrement, reset} = useSampleStore();
-
+  // const tabBarHeight = useBottomTabBarHeight();
+  // console.log('tabBarHeight', tabBarHeight)
   return (
-    <ScrollView className="flex-1">
+    <ScrollView
+      className="flex-1"
+      // contentContainerStyle={{paddingBottom: tabBarHeight}}
+    >
       <View className="px-4 pt-2 pb-6 space-y-5">
         {/* Search */}
         <View className="bg-white rounded-2xl px-3 py-2.5 flex-row items-center shadow-sm">
@@ -208,4 +156,4 @@ function AppContent() {
   );
 }
 
-export default Landing;
+export default DashBoard;
