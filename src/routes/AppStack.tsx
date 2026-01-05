@@ -1,13 +1,11 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import BottomNavigation from './BottomNavigation';
-import Landing from '../screens/Dashboard/Landing';
-import LandingTwo from '../screens/Dashboard/LandingTwo';
+import DashBoard from '../screens/DashBoard/DashBoard';
 
 type AppStackParamList = {
   Main: undefined;
-  Landing: undefined;
-  LandingTwo: undefined;
+  DashBoard: undefined;
 };
 
 const Stack = createStackNavigator<AppStackParamList>();
@@ -30,8 +28,8 @@ const AppStack = () => (
       // }}
     />
     <Stack.Screen
-      name="Landing"
-      component={Landing}
+      name="DashBoard"
+      component={DashBoard}
       // options={{
       //   // gesturesEnabled: false,
       //   headerShown: false,
@@ -40,7 +38,6 @@ const AppStack = () => (
       //   }
       // }}
     />
-    <Stack.Screen name="LandingTwo" component={LandingTwo} />
   </Stack.Navigator>
 );
 
