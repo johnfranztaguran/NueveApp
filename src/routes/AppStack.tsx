@@ -18,8 +18,28 @@ const AppStack = () => (
     // headerMode="screen"
    screenOptions={{ headerShown: false }}
   >
-    <Stack.Screen name="Main" component={BottomNavigation} />
-    <Stack.Screen name="Landing" component={Landing} />
+    <Stack.Screen
+      name="Main"
+      component={BottomNavigation}
+      // options={{
+      //   // gesturesEnabled: false,
+      //   headerShown: false,
+      //   headerStyle: {
+      //     backgroundColor: '#106bce'
+      //   }
+      // }}
+    />
+    <Stack.Screen
+      name="Landing"
+      component={Landing}
+      // options={{
+      //   // gesturesEnabled: false,
+      //   headerShown: false,
+      //   headerStyle: {
+      //     backgroundColor: '#106bce'
+      //   }
+      // }}
+    />
     <Stack.Screen name="LandingTwo" component={LandingTwo} />
   </Stack.Navigator>
 );
