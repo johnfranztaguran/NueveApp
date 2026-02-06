@@ -1,5 +1,9 @@
 import React from 'react';
 import {Path, Svg, SvgProps} from 'react-native-svg';
+import FavoriteSvg from '../../../assets/svgs/favorite.svg'
+import OrderSvg from '../../../assets/svgs/Order.svg'
+import FollowingSvg from '../../../assets/svgs/following.svg'
+import HistorySvg from '../../../assets/svgs/history.svg'
 
 type IconComponent = React.FC<
   SvgProps & {className?: string; color?: string; fill?: string}
@@ -109,6 +113,19 @@ const MapLoc: IconComponent = ({className, ...props}) => (
   </Svg>
 );
 
+const Favorite: IconComponent = () => (
+  <FavoriteSvg width={18} height={18} />
+)
+const Order: IconComponent = () => (
+  <OrderSvg width={18} height={18} />
+)
+const Following: IconComponent = () => (
+  <FollowingSvg width={18} height={18} />
+)
+const History: IconComponent = () => (
+  <HistorySvg width={18} height={18} />
+)
+
 const svgs = {
   home: Home,
   explore: Explore,
@@ -117,6 +134,10 @@ const svgs = {
   'notification-bell': NotificationBell,
   user: User,
   'map-loc': MapLoc,
+  favorite: Favorite,
+  order: Order,
+  following: Following,
+  history: History
 };
 
 export default svgs;

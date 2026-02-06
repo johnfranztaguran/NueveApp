@@ -19,6 +19,9 @@ module.exports = {
         '2xl': 16,
         '3xl': 24,
       },
+      borderWidth: {
+        'half-px': 0.5
+      }
     },
   },
   plugins: [],

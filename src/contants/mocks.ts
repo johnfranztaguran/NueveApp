@@ -1,8 +1,8 @@
 export const quickActions = [
-    {label: 'Favorites', emoji: '❤️'},
-    {label: 'History', emoji: '🕘'},
-    {label: 'Following', emoji: '👥'},
-    {label: 'Collections', emoji: '🗂️'},
+    {label: 'Favorites', icon: 'favorite'},
+    {label: 'History', icon: 'history'},
+    {label: 'Following', icon: 'following'},
+    {label: 'Collections', icon: 'order'},
   ];
   
 export const categories = [

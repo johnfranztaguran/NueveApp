@@ -37,8 +37,8 @@ const CustomBottomNavIcons: React.FC<CustomBottomNavIconsProps> = (props) => {
   }
 
   return (
-    <SafeAreaView edges={['bottom']} className="bg-surface pt-3">
-      <View className="flex-row bg-surface">
+    <SafeAreaView edges={['bottom']} className="bg-surface pt-0 mt-0">
+      <View className="h-[75px] flex-row bg-surface border-t border-black/20">
         {routes.map((route, idx) => {
           const isFocused = index === idx;
           const color = isFocused ? '#111827' : '#9CA3AF';
@@ -54,7 +54,7 @@ const CustomBottomNavIcons: React.FC<CustomBottomNavIconsProps> = (props) => {
                   fill={color}
                   stroke='none'
                   name={iconName}
-                  className="mt-5"
+                  // className="mt-5"
                 />
                 <Text className="text-[10px] leading-3 text-center" style={{color}}>
                   {title}

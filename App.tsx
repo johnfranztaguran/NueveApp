@@ -13,12 +13,12 @@ function App() {
     <SafeAreaProvider>
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
       <NavigationContainer
-          ref={navigationRef}
-          onReady={() => {
-            isReadyNavigationRef.current = true;
-          }}>
-          <RootNavigation />
-        </NavigationContainer>
+        ref={navigationRef}
+        onReady={() => {
+          isReadyNavigationRef.current = true;
+        }}>
+        <RootNavigation />
+      </NavigationContainer>
     </SafeAreaProvider>
   );
 }

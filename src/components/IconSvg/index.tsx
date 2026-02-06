@@ -26,3 +26,4 @@ const IconSvg: React.FC<IconSvgProps> = ({name, color, fill, ...rest}) => {
 };
 
 export default IconSvg;
+export type {IconName};
